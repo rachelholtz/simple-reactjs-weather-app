@@ -1,0 +1,8 @@
+# Github's Suggested WordPress .gitignore Rules #
+# See https://github.com/github/gitignore       #
+#################################################
+
+
+# Miscellaneous garbage to ignore #
+###################################
+node_modules

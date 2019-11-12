@@ -2,7 +2,9 @@ import React from 'react';
 
 const Header = () => (
   <header>
-    <h1>Weather</h1>
+    <a href="/">
+      <h1>Weather</h1>
+    </a>
   </header>
 )
 

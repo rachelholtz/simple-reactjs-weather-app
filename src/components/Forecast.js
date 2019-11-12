@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class Forecast extends React.Component{
   render(){
@@ -6,18 +7,20 @@ class Forecast extends React.Component{
 
     return(
       <li className="forecast-container">
-        <img src={image} alt={name}/>
-        <h3>
-          {name}
-        </h3>
-        <div className="temperature">
-          <div className="temp-low">
-            <p>Low: {low}&deg;</p>
+        <Link to={`/forecast/${this.props.id}`}>
+          <img src={image} alt={name}/>
+          <h3>
+            {name}
+          </h3>
+          <div className="temperature">
+            <div className="temp-low">
+              <p>Low: {low}&deg;</p>
+            </div>
+            <div className="temp-high">
+              <p>High: {high}&deg;</p>
+            </div>
           </div>
-          <div className="temp-high">
-            <p>High: {high}&deg;</p>
-          </div>
-        </div>
+        </Link>
       </li>
     )
   }

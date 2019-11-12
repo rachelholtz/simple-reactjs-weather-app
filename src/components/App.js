@@ -1,30 +1,14 @@
 import React from 'react';
-import weather from '../weather';
-import Header from './Header';
-import Weather from './Weather';
-import Footer from './Footer';
+import Forecast from './Forecast';
 
-class App extends React.Component{
-  // initial state
-  state = {
-    forecast: {},
-  };
+const App = (props) => (
 
-  componentDidMount(){
-    this.setState({
-        forecast : weather
-    });
-  }
+      <ul className="weather-container">
+        {Object.keys(props.details.forecast).map((key, i) => (
+          <Forecast key={key} id={key} i={i} forecast={props.details.forecast[key]}/>
+        ))}
+      </ul>
 
-  render(){
-    return(
-      <div className="main">
-        <Header/>
-        <Weather details={this.state} />
-        <Footer/>
-      </div>
-    )
-  }
-}
+)
 
 export default App;
